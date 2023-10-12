@@ -22,13 +22,9 @@ export class HomePage implements OnInit {
     this.catService.getCats().subscribe({
       next: (cats: Cat[]) => {
         this.cats = cats;
-        console.log('Lista de gatos:', this.cats);
       },
       error: (error: any) => {
         console.error('Error al obtener la lista de gatos:', error);
-      },
-      complete: () => {
-        // Manejar la lógica después de que la operación esté completa (opcional)
       }
     });
   }
