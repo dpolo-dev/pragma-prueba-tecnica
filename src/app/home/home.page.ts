@@ -14,10 +14,18 @@ export class HomePage implements OnInit {
     private catService: CatService
   ) {}
 
+  /**
+   * Se ejecuta al inicializar el componente y llama a la función `getCats`
+   * para cargar la lista de razas de gatos.
+   */
   ngOnInit() {
     this.getCats();
   }
 
+  /**
+   * Obtiene la lista de razas de gatos desde el servicio `CatService` y actualiza
+   * la propiedad `cats` del componente.
+   */
   getCats() {
     this.catService.getCats().subscribe({
       next: (cats: Cat[]) => {
@@ -28,5 +36,4 @@ export class HomePage implements OnInit {
       }
     });
   }
-
 }

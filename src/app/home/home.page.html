@@ -25,6 +25,20 @@
               <ion-label><strong>Nivel de afecto:</strong></ion-label>
               <ion-label>{{ cat.affectionLevel }}</ion-label>
             </ion-item>
+            <ion-item>
+              <ion-label><strong>Nivel de energía:</strong></ion-label>
+              <ion-label>{{ cat.energyLevel }}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label><strong>Inteligencia:</strong></ion-label>
+              <ion-label>{{ cat.intelligence }}</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label><strong>Informacion:</strong></ion-label>
+              <ion-label>
+                <a [href]="cat.wikipediaUrl" target="_blank">{{ cat.breedName }} wiki</a>
+              </ion-label>
+            </ion-item>
           </ion-list>
         </ion-card-content>
       </ion-card>

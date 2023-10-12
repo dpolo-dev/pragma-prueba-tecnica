@@ -53,12 +53,17 @@ export class CatService {
    * @returns Un arreglo de objetos Cat.
    */
   private transformData(data: any[]): Cat[] {
+    console.log(data);
+    
     return data.map(item => ({
       breedName: item.name,
       origin: item.origin,
       affectionLevel: item.affection_level,
       reference_image_id: item.reference_image_id,
       imageUrl: '',
+      energyLevel: item.energy_level,
+      intelligence: item.intelligence,
+      wikipediaUrl: item.wikipedia_url,
     }));
   }
 

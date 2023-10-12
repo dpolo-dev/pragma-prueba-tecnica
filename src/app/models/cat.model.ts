@@ -4,4 +4,8 @@ export interface Cat {
     affectionLevel: number;
     imageUrl: string;
     reference_image_id?: string;
+    energyLevel?: number;
+    intelligence?: number;
+    description?: string;
+    wikipediaUrl?: string;
 }
