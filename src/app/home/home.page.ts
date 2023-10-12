@@ -1,12 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Cat } from '../models/cat.model';
+import { CatService } from '../services/catServices/cat.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
+  cats: Cat[] = [];
 
-  constructor() {}
+  constructor(
+    private catService: CatService
+  ) {}
+
+  ngOnInit() {
+    this.getCats();
+  }
+
+  getCats() {
+    this.catService.getCats().subscribe({
+      next: (cats: Cat[]) => {
+        this.cats = cats;
+        console.log('Lista de gatos:', this.cats);
+      },
+      error: (error: any) => {
+        console.error('Error al obtener la lista de gatos:', error);
+      },
+      complete: () => {
+        // Manejar la lógica después de que la operación esté completa (opcional)
+      }
+    });
+  }
 
 }
