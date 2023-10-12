@@ -62,6 +62,10 @@ export class CatService {
       energyLevel: item.energy_level,
       intelligence: item.intelligence,
       wikipediaUrl: item.wikipedia_url,
+      altNames: item.alt_names,
+      adaptability: item.adaptability,
+      socialNeeds: item.social_needs,
+      strangerFriendly: item.stranger_friendly,
     }));
   }
 

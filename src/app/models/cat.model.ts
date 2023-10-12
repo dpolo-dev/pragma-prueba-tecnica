@@ -8,4 +8,8 @@ export interface Cat {
     intelligence?: number;
     description?: string;
     wikipediaUrl?: string;
+    altNames?: string;
+    adaptability?: string;
+    socialNeeds?: string;
+    strangerFriendly?: string;
 }
