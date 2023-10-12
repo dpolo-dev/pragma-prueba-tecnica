@@ -9,10 +9,12 @@ import { CatService } from '../services/catServices/cat.service';
 })
 export class HomePage implements OnInit {
   cats: Cat[] = [];
+  filteredCats: Cat[] = [];
+  searchText: string = '';
 
   constructor(
     private catService: CatService
-  ) {}
+  ) { }
 
   /**
    * Se ejecuta al inicializar el componente y llama a la función `getCats`
@@ -30,10 +32,20 @@ export class HomePage implements OnInit {
     this.catService.getCats().subscribe({
       next: (cats: Cat[]) => {
         this.cats = cats;
+        this.filteredCats = cats;
       },
       error: (error: any) => {
         console.error('Error al obtener la lista de gatos:', error);
       }
+    });
+  }
+
+  filterCats() {
+    this.filteredCats = this.cats.filter(cat => {
+      return (
+        cat.breedName.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        cat.origin.toLowerCase().includes(this.searchText.toLowerCase())
+      );
     });
   }
 }

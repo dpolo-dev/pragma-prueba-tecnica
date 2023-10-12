@@ -53,8 +53,6 @@ export class CatService {
    * @returns Un arreglo de objetos Cat.
    */
   private transformData(data: any[]): Cat[] {
-    console.log(data);
-    
     return data.map(item => ({
       breedName: item.name,
       origin: item.origin,

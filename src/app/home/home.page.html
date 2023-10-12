@@ -6,7 +6,11 @@
   </ion-header>
 
   <ion-row>
-    <ion-col size="12" size-md="6" size-lg="4" *ngFor="let cat of cats" class="cat-card">
+
+    <ion-searchbar [(ngModel)]="searchText" placeholder="Buscar por nombre u origen" (ionInput)="filterCats()"
+      class="search-bar"></ion-searchbar>
+
+    <ion-col size="12" size-md="6" size-lg="4" *ngFor="let cat of filteredCats" class="cat-card">
       <ion-card>
 
         <ion-card-header>

@@ -1,3 +1,5 @@
+$background-color: var(--ion-background-color);
+
 #container {
   text-align: center;
 
@@ -31,4 +33,11 @@
   width: auto;
   display: block;
   margin: 0 auto;
+}
+
+.search-bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: $background-color;
 }
